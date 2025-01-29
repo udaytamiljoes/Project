@@ -1,0 +1,8 @@
+/* custom.css */
+slick-slide {
+    transition: transform 0.5s ease-in-out !important;
+  }
+  
+  .slick-prev, .slick-next {
+    z-index: 1;
+  }
