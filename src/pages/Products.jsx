@@ -98,10 +98,10 @@ const Products = () => {
                  <span className="text-2xl font-bold">  ₹{product.price}</span>
                  </div>
                 
-                  <button className="bg-green-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-green-700">
+                  {/* <button className="bg-green-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-green-700">
                     <ShoppingCart size={20} />
                     <span>Add to Cart</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </motion.div>
