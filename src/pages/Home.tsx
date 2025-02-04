@@ -8,6 +8,9 @@ import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion"
 import Testimonial from "./Testimonial";
 import { useInView } from "react-intersection-observer";
 import About from "./About";
+import Products from "./Products";
+import Contact from "./Contact";
+// import About from "./About";
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -413,6 +416,14 @@ const Home = () => {
       <Testimonial />
       <div style={{ marginTop: '-100px' }}>
         <About />
+      </div>
+      <div style={{ marginTop: '-170px' }}>
+      <Products/>
+
+      </div>
+      <div style={{ marginTop: '-170px' }}>
+      <Contact/>
+
       </div>
 
 

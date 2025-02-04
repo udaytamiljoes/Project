@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+// import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShoppingCart, Heart } from 'lucide-react';
 import pro from '../../public/images/pro.jpg'
 import pro1 from '../../public/images/pro1.jpg'
@@ -12,6 +12,7 @@ import pro3 from '../../public/images/pro3.jpg'
 import pro5 from '../../public/images/pro5.jpg'
 // import pro6 from '../../public/images/pro6.jpg'
 import pro7 from '../../public/images/pro7.jpg'
+import { useRef } from 'react';
 
 
 
@@ -67,10 +68,16 @@ const products = [
 ];
 
 const Products = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const x = useTransform(scrollYProgress, [0, 0.3], ["80px", "0px"]);
+  const y = useTransform(scrollYProgress, [0, 0.3], ["80px", "0px"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
   return (
     <div style={{ marginTop: "150px" }} className="py-12 bg-gradient-to-b from-primary-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Our Products</h1>
+        <motion.h1  ref={ref}
+            style={{ opacity, x, }} className="text-3xl font-bold mb-8 text-center">Our Products</motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
